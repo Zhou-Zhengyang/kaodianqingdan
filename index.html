@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生手册（2026版）· 大一新生开学考易考点清单</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280;
+    --line:#e5e9f2; --head:linear-gradient(135deg,#eef4ff 0%,#eaf8f4 100%);
+    --accent:#2563eb; --accent2:#0f766e;
+    --s3:#dc2626; --s2:#ea580c; --s1:#64748b;
+    --warn-bg:#fef2f2; --warn-line:#fca5a5; --warn-ink:#991b1b;
+    --tip-bg:#fffbeb; --tip-line:#fcd34d; --tip-ink:#92400e;
+    --chip:#eff6ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;
+    font-size:14.5px;line-height:1.7}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px 80px}
+  header{background:var(--head);border-bottom:1px solid var(--line);
+    padding:30px 18px 24px;text-align:center}
+  header h1{margin:0 0 6px;font-size:26px;letter-spacing:.5px}
+  header p{margin:2px 0;color:var(--muted);font-size:13.5px}
+  .legend{margin-top:14px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:13px}
+  .legend b{font-weight:600}
+  .star3{color:var(--s3)} .star2{color:var(--s2)} .star1{color:var(--s1)}
+
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(244,246,251,.95);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+    padding:10px 18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+  .toolbar input{flex:1;min-width:220px;max-width:420px;padding:8px 12px;border:1px solid var(--line);
+    border-radius:8px;font-size:13.5px;background:#fff}
+  .btn{padding:8px 14px;border:1px solid var(--line);background:#fff;border-radius:8px;
+    cursor:pointer;font-size:13px;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:18px 0 4px}
+  .nav a{font-size:12.5px;text-decoration:none;color:var(--accent);background:var(--chip);
+    padding:5px 11px;border-radius:20px;border:1px solid #dbe7ff}
+  .nav a:hover{background:#dbeafe}
+
+  section{margin-top:26px}
+  h2.sec{font-size:20px;margin:0 0 4px;padding:12px 16px;background:#fff;border:1px solid var(--line);
+    border-left:5px solid var(--accent);border-radius:10px;scroll-margin-top:64px}
+  h2.sec .no{color:var(--accent);margin-right:8px}
+  .sec-sub{color:var(--muted);font-size:12.5px;margin:4px 0 12px 6px}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    margin:10px 0;overflow:hidden;box-shadow:0 1px 2px rgba(16,24,40,.03)}
+  details[open]{box-shadow:0 3px 12px rgba(16,24,40,.06)}
+  summary{cursor:pointer;padding:11px 16px;font-weight:600;font-size:15px;
+    background:#fbfcfe;user-select:none;display:flex;align-items:center;gap:8px}
+  summary:hover{background:#f3f7ff}
+  summary .tag{margin-left:auto;font-size:11px;font-weight:500;color:var(--muted)}
+  .body{padding:6px 18px 16px}
+  .body h4{margin:14px 0 6px;font-size:14.5px;color:var(--accent2);
+    border-bottom:1px dashed var(--line);padding-bottom:4px}
+  ul{margin:6px 0;padding-left:22px}
+  li{margin:5px 0}
+  li::marker{color:var(--accent)}
+  .k{font-weight:700}
+  .num{color:var(--s3);font-weight:700}
+
+  .tip{background:var(--tip-bg);border-left:4px solid var(--tip-line);color:var(--tip-ink);
+    padding:8px 12px;border-radius:6px;margin:8px 0;font-size:13.5px}
+  .warn{background:var(--warn-bg);border-left:4px solid var(--warn-line);color:var(--warn-ink);
+    padding:10px 13px;border-radius:6px;margin:10px 0;font-size:13.5px}
+
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13.2px;background:#fff}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+  th{background:#eef3fa;font-weight:600}
+  tr:nth-child(even) td{background:#fafbfe}
+  td .num{color:var(--s3)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 15px}
+  .mini h4{margin:0 0 6px;font-size:14px;color:var(--accent2)}
+  .dimmed{opacity:.18}
+  .hit mark{background:#ffe08a;padding:0 2px;border-radius:2px}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:36px;line-height:1.8}
+  #topBtn{position:fixed;right:20px;bottom:22px;display:none;padding:10px 14px;border:0;
+    border-radius:50%;background:var(--accent);color:#fff;font-size:16px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(37,99,235,.35)}
+  @media print{
+    body{background:#fff;font-size:11px}
+    .toolbar,.nav,#topBtn{display:none!important}
+    details{break-inside:avoid;box-shadow:none}
+    details>*:not(summary){display:block!important}
+    header{padding:10px}
+    h2.sec{scroll-margin-top:0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>《学生手册（2026版）》· 开学考易考点清单</h1>
+  <p>西南科技大学 · 面向大一新生 · 内容全部摘自手册四大板块原文</p>
+  <p>按重要度分级，配记忆口诀，适合考前快速背诵</p>
+  <div class="legend">
+    <span><b class="star3">★★★</b> 必背高频</span>
+    <span><b class="star2">★★</b> 重点</span>
+    <span><b class="star1">★</b> 了解</span>
+    <span>🟡 口诀助记</span>
+    <span>🔴 易混淆 / 陷阱</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <input id="q" type="text" placeholder="输入关键词筛选（如：处分、绩点、申诉、助学金…）">
+  <button class="btn" id="expandBtn">展开全部</button>
+  <button class="btn" id="printBtn">打印 / 存为PDF</button>
+</div>
+
+<div class="wrap">
+<nav class="nav">
+  <a href="#gold">黄金数字速记</a>
+  <a href="#s1">① 总则法规</a>
+  <a href="#s2">② 奖励与处分</a>
+  <a href="#s3">③ 日常管理</a>
+  <a href="#s4">④ 资助与育人</a>
+  <a href="#cmp">跨文件对比</a>
+</nav>
+
+<!-- ================= 黄金速记 ================= -->
+<section id="gold">
+  <h2 class="sec">🔥 考前黄金数字速记（先看这里）</h2>
+  <p class="sec-sub">最容易出填空、选择、判断的数字集中背诵</p>
+  <div class="grid">
+    <div class="mini">
+      <h4>⚖️ 处分与申诉</h4>
+      <ul>
+        <li>处分五档：<span class="k">警告→严重警告→记过→留校察看→开除学籍</span></li>
+        <li>处分期限：<span class="num">警/重 6 个月、记过 9 个月、察看 12 个月</span><br><span class="star1">教育部令表述为"6 到 12 个月"区间</span></li>
+        <li>申诉链：<span class="num">10 日</span>申诉 → <span class="num">15 日</span>复查（可延 15 日）→ <span class="num">15 日</span>向省教育厅申诉 → 省级 <span class="num">30 工作日</span>；未告知期限最长 <span class="num">6 个月</span></li>
+        <li>权利 <span class="num">7</span> 项 / 义务 <span class="num">6</span> 项</li>
+        <li>公告送达 <span class="num">30 日</span>；复查决定书 <span class="num">10 工作日</span>送达</li>
+      </ul>
+      <div class="tip">口诀：处分"警重记察开"；期限"警重6、记9、察12"；申诉"10申15复延15，再15省级30日"。</div>
+    </div>
+    <div class="mini">
+      <h4>📚 学籍与学位</h4>
+      <ul>
+        <li>入学复查 <span class="num">3 个月</span>；转学备案 <span class="num">3 个月</span></li>
+        <li>学习年限：四年制 <span class="num">3—6 年</span>、五年制 <span class="num">4—7 年</span>、休学创业 ≤<span class="num">8 年</span></li>
+        <li>休学：最长年限内 <span class="num">2 次</span>，每次 <span class="num">2—24 个月</span></li>
+        <li>退学红线：未经批准连续 <span class="num">两周</span> 不参加教学</li>
+        <li>肄业：已获学分 <span class="num">&gt;30</span>；结业：距毕业差 <span class="num">≤30</span> 学分</li>
+        <li>授位绩点：主修/二学位 <span class="num">2.0</span>、辅修 <span class="num">1.6</span>；提前毕业 <span class="num">3.8</span></li>
+      </ul>
+      <div class="tip">口诀："三四五六、创业八年；学位二零、辅修一六、提前三八"。</div>
+    </div>
+    <div class="mini">
+      <h4>🏆 奖励与测评</h4>
+      <ul>
+        <li>综测周期 <span class="num">9.1—次年8.31</span>；9月测评、10月中结束</li>
+        <li>五分项德/发/智/体/劳各占 <span class="num">20%</span>；公式 <span class="k">(100−排名比)×20%</span> 五项相加</li>
+        <li>民主评议：自评 <span class="num">20%</span>+班级 <span class="num">50%</span>+辅导员 <span class="num">30%</span></li>
+        <li>公示 <span class="num">3 工作日</span>、复核 <span class="num">5 工作日</span></li>
+        <li>校长奖学金 <span class="num">10 人 / 1 万元</span>；基础 <span class="num">45%</span>+答辩 <span class="num">50%</span>+材料 <span class="num">5%</span>；答辩 <span class="num">6 分钟</span></li>
+      </ul>
+      <div class="tip">口诀："德发智体劳，各二成；自二班五辅三；答辩最重占一半"。</div>
+    </div>
+    <div class="mini">
+      <h4>💰 资助与育人</h4>
+      <ul>
+        <li>国奖 <span class="num">1 万</span> / 励志 <span class="num">6 千</span> / 助学金 <span class="num">2500·3700·4900</span>（均 3700）</li>
+        <li>助学贷款本专科 ≤<span class="num">2 万</span>、研究生 ≤<span class="num">2.5 万</span>；<span class="num">LPR−0.7%</span>；学制+15 最长 <span class="num">22 年</span></li>
+        <li>服兵役资助 ≤<span class="num">2 万</span>；基层就业奖补 ≤<span class="num">6000/年</span>；滋蕙计划省内 <span class="num">500</span>/省外 <span class="num">1000</span></li>
+        <li>勤工助学 ≥<span class="num">12 元/时</span>、周 ≤<span class="num">8</span> 时、月 ≤<span class="num">40</span> 时</li>
+        <li>医疗补助一律 <span class="num">50%</span>、封顶 <span class="num">6 万</span></li>
+      </ul>
+      <div class="tip">口诀："奖一万、励六千、助三千七；贷款两万减七点；勤工十二、医疗对半"。</div>
+    </div>
+  </div>
+  <div class="warn">
+    ⚠️ <b>三大奖助学金评审原则：</b>国家奖学金"<b>优中选优</b>"（看成绩）｜国家励志"<b>困中选优</b>"（困难+成绩）｜国家助学金"<b>困中选困</b>"（看困难）。兼得规则：国奖可兼助学金、<b>不可</b>兼励志；励志可兼助学金、<b>不可</b>兼国奖；助学金可兼国奖/励志、<b>不可</b>兼校内助学金。
+  </div>
+</section>
+
+<!-- ================= 板块一 ================= -->
+<section id="s1">
+  <h2 class="sec"><span class="no">①</span>总则及法律法规</h2>
+  <p class="sec-sub">A＝《普通高等学校学生管理规定》（教育部令41号）｜B＝《西南科技大学学生管理规定》（27号）。两份结构相同，注意表述差异。</p>
+
+  <details open>
+    <summary>1. 基本信息 · 权利与义务<span class="tag">点击折叠</span></summary>
+    <div class="body">
+      <h4>文件基本信息</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 施行日均为 <span class="num">2017 年 9 月 1 日</span>；A 废止"教育部令第 21 号"，B 废止"西南科大发〔2006〕129 号"。</li>
+        <li><span class="star3">★★★</span> 适用对象：A 含科研机构与"专科（高职）"、范围大；B 仅限本校研究生和本、专科生、范围小。</li>
+        <li><span class="star2">★★</span> "四个自我"：自我管理、自我服务、自我教育、自我监督。</li>
+      </ul>
+      <div class="tip">记：同日生效各自废旧；A 大 B 小；"管服教督"。</div>
+      <h4>权利与义务（高频）</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 权利 <span class="num">7</span> 项：参加教育活动与使用资源；参加社会实践/勤工助学等；申请奖助贷；获公正评价与证书；<b>知情权、参与权、表达权、监督权</b>；<b>申诉/诉讼</b>；其他。</li>
+        <li><span class="star3">★★★</span> 义务 <span class="num">6</span> 项：遵守宪法法律；遵守校规；恪守学术道德完成学业；<b>按规定缴费</b>并履行贷助学相应义务；遵守行为规范尊师；其他。</li>
+        <li><span class="star2">★★</span> "申请奖学金是权利，缴纳学费是义务"——常被互换考判断。</li>
+      </ul>
+      <div class="tip">口诀："权七义六；知参表监、申诉诉讼"。</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>2. 学籍管理（入学·考核·转学·休学·退学·证书）<span class="tag">数字密集</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 入学：不能按期须请假（<b>B 要求书面</b>）；未请假或逾期 → 视为放弃入学资格。</li>
+        <li><span class="star3">★★★</span> 复查 <span class="num">3 个月</span>；弄虚作假、徇私舞弊 → <b>取消学籍</b>（B：无论何时查实即取消）。</li>
+        <li><span class="star3">★★★</span> 身心不适宜经 <b>二级甲等以上医院</b>诊断，可保留入学资格（B：因病保留 <span class="num">1 年</span>）。</li>
+        <li><span class="star3">★★★</span> 保留入学/学籍期间 <b>不具有学籍、不享受在校生待遇</b>。</li>
+        <li><span class="star3">★★★</span> 考核分 <b>考试 + 考查</b> 两种；作弊 → 成绩<b>无效</b> + 相应纪律处分；警告至留校察看者可给补考/重修机会。</li>
+        <li><span class="star3">★★★</span> 不得转专业：特殊招生录取、国家有规定或录取前有约定者。</li>
+        <li><span class="star3">★★★</span> 不得转学 <span class="num">6</span> 情形：入学未满一学期或毕业前一年／高考分低于拟转入校同生源地录取分／低学历转高学历／定向就业招生／研究生转入标准更高／无正当理由。</li>
+        <li><span class="star3">★★★</span> 转学完成后 <span class="num">3 个月</span> 内报省级教育行政部门备案。</li>
+        <li><span class="star3">★★★</span> 保留学籍：<b>参军至退役后 2 年且不计入学习年限</b>；国际组织实习、跨校联培<b>计入</b>年限。</li>
+        <li><span class="star3">★★★</span> 退学情形含：未经批准连续 <span class="num">2 周</span> 未参加教学；B 特有"学业预警 <span class="num">3 次</span>仍未达标"。</li>
+        <li><span class="star2">★★</span> 结业换证（B 特有）：离校 <span class="num">2 年</span>内、每学期开学后 <span class="num">2 周</span>内申请进修，通过可换毕业证。</li>
+        <li><span class="star3">★★★</span> 证书遗失/损坏：出具证明书，<b>与原证书同等效力</b>；退学发肄业证或写实性学习证明。</li>
+      </ul>
+      <div class="tip">口诀："三月复查、三月备案；两周退学、参军不算；造假取消、遗失同效"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. 校园秩序 · 奖励处分 · 申诉<span class="tag">处分题核心</span></summary>
+    <div class="body">
+      <h4>校园秩序</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 禁止酗酒、打架斗殴、赌博、吸毒；不得参与非法传销、邪教、封建迷信活动。</li>
+        <li><span class="star3">★★★</span> 教育与宗教相分离：<b>不得在学校进行宗教活动</b>。</li>
+        <li><span class="star2">★★</span> 学生团体成立须书面申请、登记和年检；邀请校外人员到校办讲座<b>须学校批准</b>。</li>
+      </ul>
+      <h4>处分与申诉</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 五档处分顺序固定：警告、严重警告、记过、留校察看、开除学籍。</li>
+        <li><span class="star3">★★★</span> 处分决定前须<b>告知</b>事实理由依据并<b>听取陈述申辩</b>（B：学生或其代理人）。</li>
+        <li><span class="star3">★★★</span> 重大处分（取消资格/学籍、退学、开除）：A 提交校长办公会或专门会议并<b>合法性审查</b>；B 仅校长办公会。</li>
+        <li><span class="star3">★★★</span> 处分决定书 <span class="num">5</span> 项：基本信息／事实证据／种类依据期限／申诉途径期限／其他。</li>
+        <li><span class="star3">★★★</span> 开除学籍 <span class="num">8</span> 情形：违宪反四项基本原则／刑事犯罪／治安处罚情节严重／考试替考组织作弊卖题／学术不端严重或代写买卖论文／严重扰乱秩序／侵权造成严重后果／屡教不改。</li>
+        <li><span class="star3">★★★</span> 申诉：<span class="num">10 日</span>内申诉 → <span class="num">15 日</span>复查（可延 15 日）→ <span class="num">15 日</span>向省级申诉；A 省级 <span class="num">30 工作日</span>处理（B 无）；未告知期限最长 <span class="num">6 个月</span>。</li>
+      </ul>
+      <div class="warn">🔴 <b>A / B 易混：</b>①处分期限 A"6 到 12 个月"区间 vs B"6/9/12 个月"分档；②省级受理 A"省级教育行政部门" vs B"四川省教育厅"；③参照对象 A"高等学历继续教育" vs B"成人高等学历教育"；④A 有"30 工作日"、B 没有。</div>
+      <div class="tip">口诀：开除八条"宪四、刑事、治安、作弊、论文、秩序、侵权、屡犯"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📝 本板块常见题型与答题要点</summary>
+    <div class="body">
+      <ul>
+        <li><b>填空：</b>3 个月复查、6/9/12 个月、10/15/15/30 工作日、2017-9-1、连续两周、创业 8 年、退役后 2 年。</li>
+        <li><b>简答：</b>①权利义务 → 分 7/6 项列点；②处分种类及期限 → 五档顺序+两文件期限差异；③开除学籍情形 → 8 项；④申诉流程 → 10→15→延15→15→30，最长 6 月；⑤不得转学 → 6 项。</li>
+        <li><b>判断陷阱：</b>把 B 的"书面请假/学业预警3次/四川省教育厅/30工作日"错套到 A，或反之。</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 板块二 ================= -->
+<section id="s2">
+  <h2 class="sec"><span class="no">②</span>学生奖励与处分</h2>
+  <p class="sec-sub">综测 → 奖励 → 处分 → 申诉，一条链。数字与期限是命题重心。</p>
+
+  <details open>
+    <summary>1. 综合测评实施办法<span class="tag">公式与权重</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 考查期 <span class="num">9.1—次年8.31</span>；测评 9 月进行、10 月中结束。</li>
+        <li><span class="star3">★★★</span> 五分项：<b>德行、发展、智力、体育、劳动</b>，各占 <span class="num">20%</span>。</li>
+        <li><span class="star3">★★★</span> 总成绩＝(100−德行排名比)×20% ＋(100−发展排名比)×20% ＋(100−智力排名比)×20% ＋(100−体育排名比)×20% ＋(100−劳动排名比)×20%。<span class="star1">（"排名比"＝专业排名/专业人数）</span></li>
+        <li><span class="star3">★★★</span> 民主评议：自评 <span class="num">20%</span>+班级评议小组 <span class="num">50%</span>+辅导员 <span class="num">30%</span>；标准总分100＝思想政治30+学习态度25+遵纪守法20+文明素养25。</li>
+        <li><span class="star3">★★★</span> 公示 <span class="num">3 工作日</span>；异议由学院 <span class="num">5 工作日</span>内复核答复。</li>
+        <li><span class="star3">★★★</span> 处分扣分：察看 <span class="num">30</span>、记过 <span class="num">20</span>、严重警告 <span class="num">15</span>、警告 <span class="num">10</span>、通报批评 <span class="num">5</span>、旷课迟到 <span class="num">2</span>；通报表扬 <b>+5</b>。</li>
+        <li><span class="star3">★★★</span> 智力素质按<b>正考</b>成绩，<b>补考不算</b>，缓考计入实际参加学年；弄虚作假则该一级指标计 <span class="num">0</span> 分。</li>
+        <li><span class="star2">★★</span> CET4 达 425 加 <span class="num">5</span> 分、CET6 达 425 加 <span class="num">10</span> 分；集体荣誉国家级 20/16/10、省级 10/8/6、校市 5/3/2、院 3/2/1。</li>
+      </ul>
+      <div class="tip">口诀："德发智体劳，各占二十；自二班五辅三；思三学二五、纪二明二五；察看三十递减"。</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>2. 奖励管理 · 奖励细则 · 校长奖学金<span class="tag">比例金额</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 原则：精神奖励为主、物质奖励为辅；<b>以综测结果为基本依据</b>。</li>
+        <li><span class="star3">★★★</span> 表彰 5 种：通报表扬、授予荣誉称号、颁发证书/奖状/奖牌、颁发奖金或奖品、通令嘉奖。</li>
+        <li><span class="star3">★★★</span> 校级奖励 <span class="num">16</span> 项、院级 <span class="num">12</span> 项；奖励公示 <span class="num">5 工作日</span>。</li>
+        <li><span class="star3">★★★</span> 比例基数：<b>除特别说明外，不含一年级学生</b>。</li>
+        <li><span class="star3">★★★</span> 同一序列奖项可重复获荣誉，<b>只获最高奖金</b>。</li>
+        <li><span class="star3">★★★</span> 校长奖学金 ≤<span class="num">10</span> 人、<span class="num">1 万元</span>；三好学生 ≤1%/4000 元；优秀学生干部 ≤2%/1000 元；优秀毕业生 ≤5%（发<b>奖品</b>）；十佳励志 10 名/2000 元；优良学风寝室 400 元。</li>
+        <li><span class="star3">★★★</span> 三好学生条件：德行前 <span class="num">10%</span>、发展前 <span class="num">20%</span>、劳动前 <span class="num">20%</span>、智力排序、体育 ≥<span class="num">75</span> 分。</li>
+        <li><span class="star3">★★★</span> 学习优秀奖：按智力排序、<b>无重修无补考</b>；优秀学生干部：任满一年考核优秀、德行在干部中前 20%、体育≥75。</li>
+        <li><span class="star3">★★★</span> 校长奖学金：从三好学生中产生，秋季评选、本科阶段仅一次；学院按三好人数 <span class="num">10%</span> 推荐；得分＝基础 <span class="num">45%</span>+答辩 <span class="num">50%</span>+材料 <span class="num">5%</span>；答辩 <span class="num">6 分钟</span>（展示 4+问答 2）；公示 5 工作日。</li>
+      </ul>
+      <div class="warn">🔴 公示期别混：综合测评 <b>3 工作日</b> vs 奖励评选/校长奖学金 <b>5 工作日</b>；校三好 ≤1% vs 院三好 ≤4%；校先进班集体 4% vs 院 8%。</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>3. 违纪处分办法 · 校内申诉处理办法<span class="tag">最高频</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 五档处分 + 期限：警/重 <span class="num">6</span> 月、记过 <span class="num">9</span> 月、察看 <span class="num">12</span> 月；毕业生处分不超过离校时间。</li>
+        <li><span class="star3">★★★</span> 从轻直至免予 <span class="num">3</span> 情形：主动承认及时改正且未造成危害／如实提供情况揭发他人有立功表现／受胁迫或诱骗。</li>
+        <li><span class="star3">★★★</span> 从重直至开除 <span class="num">9</span> 情形：拒不承认／情节恶劣后果严重／屡犯不改／打击报复／胁迫贿买教唆／勾结校外人员／组织策划群体违纪／抵触拒不改正／两种以上违纪。</li>
+        <li><span class="star3">★★★</span> 不假离校（24 小时内按 1 次）：1 次警告、2 次严重警告、3 次记过、3 次以上留校察看。</li>
+        <li><span class="star3">★★★</span> 旷课（集体活动每天按 6 学时）：<span class="num">6</span> 学时警告、<span class="num">12</span> 严重警告、<span class="num">18</span> 记过、<span class="num">24</span> 及以上留校察看；夜不归宿次数同不假离校。</li>
+        <li><span class="star3">★★★</span> 考试违规六级：口头警告纠正（无处分无零分）→ 警告零分 → 严重警告零分 → 记过（作弊）零分 → 留校察看（作弊）零分 → 开除学籍（作弊）。</li>
+        <li><span class="star3">★★★</span> 监考 <span class="num">3 工作日</span>内上报、教学主管部门 <span class="num">5 工作日</span>内转交；公告送达经过 <span class="num">30 日</span>视为送达。</li>
+        <li><span class="star3">★★★</span> 处分解除：期满本人申请、每 <span class="num">2 月</span>交 1 次思想汇报；<b>解除前不能申请校级及以上奖学金，解除后不再受原处分影响</b>。</li>
+        <li><span class="star3">★★★</span> 学术不端（抄袭/篡改/伪造）给予留校察看；情节严重或代写、买卖论文 → 开除学籍。</li>
+      </ul>
+      <div class="tip">口诀：不假离校/夜不归宿"1警2重3过超3察"；旷课"6警12重18过24察"；作弊升级"记过→察看→开除"。</div>
+      <h4>校内申诉处理办法</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 申诉 <span class="num">10 日</span>内提出；受理审查 <span class="num">3 工作日</span>、补正 <span class="num">3 日</span>、承办部门答复 <span class="num">3 工作日</span>。</li>
+        <li><span class="star3">★★★</span> 委员会 <span class="num">9 人</span>（2 主任+4 部门+法律顾问+教师代表+学生代表）；出席 <span class="num">2/3</span> 以上、结论须 <span class="num">1/2</span> 以上应到会委员同意。</li>
+        <li><span class="star3">★★★</span> 复查 <span class="num">15 日</span>（可延 15 日）；决定书 <span class="num">10 工作日</span>送达；对复查不服 <span class="num">15 日</span>内向四川省教育厅申诉。</li>
+        <li><span class="star3">★★★</span> <b>申诉期间原决定不停止执行</b>（委员会可建议暂缓）。</li>
+      </ul>
+      <div class="tip">时限口诀："申诉10、受理3、补正3、答复3、复查15延15、送达10工作日、外部15"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📝 本板块常见题型与答题要点</summary>
+    <div class="body">
+      <ul>
+        <li><b>计算：</b>给五项专业排名套综测公式；给五项排名算校长奖学金基础分（每项20分、每降一名减0.5）。</li>
+        <li><b>单选/判断：</b>CET 加分、公示 3 vs 5 工作日、处分 6/9/12、公告 30 日、口头警告不是处分、解除前不可评奖、申诉不停执行。</li>
+        <li><b>简答：</b>从轻3/从重9 情形；考试违纪分级；申诉时限链；综测程序六步。</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 板块三 ================= -->
+<section id="s3">
+  <h2 class="sec"><span class="no">③</span>学生日常管理</h2>
+  <p class="sec-sub">13 份制度文件。学籍、学位、请销假、住宿、图书馆、一卡通、校外住宿与新生最相关。</p>
+
+  <details open>
+    <summary>1. 学籍管理办法（详见板块①数字速记）<span class="tag">核心</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 逾期 <span class="num">2 周</span>未报到视为放弃；病休保留入学资格 <span class="num">1 年</span>（二级甲等医院）、参军至退役后 <span class="num">2 年</span>。</li>
+        <li><span class="star3">★★★</span> 每学年开学 <span class="num">1 个月</span>内缴费；<b>未注册所修课程无效</b>。</li>
+        <li><span class="star3">★★★</span> 学习年限四 <span class="num">3—6</span>、五 <span class="num">4—7</span>、创业 ≤<span class="num">8</span>；休学 <span class="num">2 次</span>、每次 <span class="num">2—24 个月</span>。</li>
+        <li><span class="star3">★★★</span> 缓考有效期 <span class="num">1 学年</span>；成绩复查 <span class="num">2 个月</span>；缺考零分、作弊零分。</li>
+        <li><span class="star3">★★★</span> 肄业 &gt;<span class="num">30</span> 学分、结业差 ≤<span class="num">30</span> 学分；<b>肄业不能换毕业证</b>；结业开学 2 周内进修换证。</li>
+        <li><span class="star2">★★</span> 提前毕业：前三/五学期修满 <span class="num">50%</span> 学分、绩点 <span class="num">3.8</span>、在校 ≥3/4 年。</li>
+      </ul>
+      <div class="warn">🔴 <b>30 学分两种口径：</b>肄业＝"已获得学分超过 30"；结业＝"距毕业要求差距≤30"。勿混。</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>2. 学士学位授予办法（2026年9月后入学新生适用）<span class="tag">重磅</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 授位须同时符合：拥护党的领导、品德良好；修满学分准予毕业；<b>主修必修课平均绩点 <span class="num">2.0</span></b>、二学位 2.0、辅修 <span class="num">1.6</span>；国际学生 HSK 五级（中文）/三级（英文）。</li>
+        <li><span class="star3">★★★</span> 不授予/撤销 <span class="num">5</span> 情形：①因考试违纪作弊受<b>留校察看及以上处分且未解除</b>（以解除文件发文时间为准）；②论文/成果代写剽窃伪造；③冒名顶替或以非法手段取得资格；④学位委员会决定的其他情形；⑤其他严重违法行为。</li>
+        <li><span class="star3">★★★</span> 辅修学位须先取得主修学士学位，<b>在主修证书中注明、不单独发证</b>。</li>
+        <li><span class="star3">★★★</span> 补授：因绩点未获主修学位者，离校后 <span class="num">2 学年</span>内返校选修课程申请补授。</li>
+        <li><span class="star3">★★★</span> 复核：资格审查异议 <span class="num">3 日</span>申请/学院 <span class="num">3 日</span>完成；学术评价异议 <span class="num">10 日</span>申请、<span class="num">30 日</span>内 ≥<span class="num">5 名</span>副教授复核；授位决定异议 10 日申请、学校 30 日复核。</li>
+      </ul>
+      <div class="warn">🔴 三个绩点别混：授位 <b>2.0</b>、辅修 <b>1.6</b>、提前毕业 <b>3.8</b>。留校察看未解除是授位硬伤。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. 请销假 · 住宿 · 校园文化活动 · 社团<span class="tag">审批权限</span></summary>
+    <div class="body">
+      <h4>请销假管理办法</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 审批三级：<span class="num">3 天以内（含）</span>辅导员；<span class="num">3—7 天（含7）</span>学办主任；<span class="num">7—14 天</span>学院分管领导。</li>
+        <li><span class="star3">★★★</span> 请假不得连续超过 <span class="num">2 周</span>，超期按休学办理；期满须销假，否则按<b>不假离校</b>论处。</li>
+        <li><span class="star2">★★</span> 假期发生事故由学生本人承担责任。情景题："请假 5 天谁批？"→ 辅导员审核后学办主任审批。</li>
+      </ul>
+      <h4>住宿管理办法</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 按指定<b>楼栋号、寝室号、床位号</b>入住；严禁留宿非本室成员、严禁晚归未归。</li>
+        <li><span class="star3">★★★</span> 免费水电：水每生每月 <span class="num">3 吨</span>；电本专科 <span class="num">5 度</span>、研究生 <span class="num">8 度</span>。</li>
+        <li><span class="star3">★★★</span> 严禁：管制刀具/易燃易爆剧毒、明火器具与吸烟、私拉乱接、电瓶车电池入楼充电、养宠物、电炉热得快等大功率电器。</li>
+        <li><span class="star2">★★</span> 退宿未明确限期的 <span class="num">3—5 日</span>内离校，逾期物品视为无主；寒暑假留校须审批并集中住宿。</li>
+      </ul>
+      <h4>校园文化活动 / 社团</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 校园活动"<b>谁主办、谁负责</b>"、<b>不得以盈利为目的</b>；面向全校报学工部/校团委、面向本院报学院分团委、教工报校工会。</li>
+        <li><span class="star3">★★★</span> 社团成立：≥<span class="num">50</span> 名成员、发起人 ≥<span class="num">5</span> 人、≥1 名指导教师；思政类与志愿公益类负责人<b>须中共党员</b>。</li>
+        <li><span class="star3">★★★</span> 公示 <span class="num">7 工作日</span>；每年 <span class="num">3 月和 9 月</span>申请；负责人任期 <span class="num">1 年不连任</span>；<b>不收会费</b>、<b>不得接受境外资金（违者一律注销）</b>。</li>
+      </ul>
+      <div class="tip">口诀：请假"三辅导员、三七学办、七四学院"；社团"50人5发起7公示、3月9月不收钱"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>4. 第二课堂竞赛 · 学生证 · 图书馆 · 一卡通<span class="tag">金额与规则</span></summary>
+    <div class="body">
+      <h4>第二课堂竞赛奖励</h4>
+      <ul>
+        <li><span class="star3">★★★</span> A+ 类国家级特等奖：学生团队 <span class="num">5 万</span>/个人 <span class="num">2.5 万</span>，教师团队 10 万/个人 5 万；类别越高金额越高。</li>
+        <li><span class="star3">★★★</span> 团队须 ≥<span class="num">3 人</span>；<b>就高不重复</b>（省赛进国赛按最高奖）；学校直推国赛、专项赛按 <span class="num">50%</span> 奖励；总量控制 <span class="num">15 项</span>。</li>
+        <li><span class="star2">★★</span> 每年 <span class="num">5 月和 10 月</span>受理，<b>漏报不补</b>；弄虚作假追回奖金证书并处分。</li>
+      </ul>
+      <h4>学生证、校徽</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 乘车区间终点站须为<b>离家最近的火车站（码头）</b>，不得擅自更改。</li>
+        <li><span class="star3">★★★</span> 新生入学 <span class="num">1 个月</span>内盖章领徽；补换证<b>仅在每学期最后一个月</b>集中办理；休学者学生证有效期延 <span class="num">1 年</span>。</li>
+      </ul>
+      <h4>图书馆借阅</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 本科生可借 <span class="num">30 册</span>、借期 <span class="num">60 天</span>、续借 <span class="num">1 次</span>（到期前 10 天内办理）。</li>
+        <li><span class="star3">★★★</span> 丢书赔偿：<b>1980 年及以前按原价 10 倍</b>、1981—2010 年 5 倍、2011 年后原价、孤本 10—20 倍，均另加 <span class="num">10 元</span>加工费。</li>
+        <li><span class="star3">★★★</span> 超期：<span class="num">10 日内</span>归还免收；<span class="num">11 日起</span>每天 0.1 元；单本不超书价；寒暑假开学 <span class="num">2 周</span>内归还。</li>
+        <li><span class="star2">★★</span> 不可代借冒借，违者暂停借书并暂扣校园卡。</li>
+      </ul>
+      <h4>一卡通</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 实名制、<b>一人一户</b>；学生卡有效期以学籍时间为限；先充值后消费。</li>
+        <li><span class="star3">★★★</span> 首次制卡<b>免费</b>，其他情况补卡 <span class="num">20 元/张</span>；<b>不得转借</b>，违者没收或注销。</li>
+      </ul>
+      <div class="tip">口诀：图书馆"三十册六十天、十天免十一角、旧书十倍加十元"；一卡通"实名免费补二十、禁转借"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>5. 校外住宿 · 办事服务指南<span class="tag">责任自负</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 申请条件（符合其一）：<b>三级甲等医院</b>诊断需陪护／心理专科或三甲心理科诊断／实习单位证明经学院同意。</li>
+        <li><span class="star3">★★★</span> 集中办理：开学第 <span class="num">1—2 周</span>；时长不得超过 <span class="num">1 年</span>，到期重办。</li>
+        <li><span class="star3">★★★</span> 地址/联系方式变更 <span class="num">3 日</span>内报告、<b>每周</b>向辅导员汇报；获批 <span class="num">1 周</span>内交合同，否则撤销。</li>
+        <li><span class="star3">★★★</span> 擅自外宿：给予处分 + 取消该学年评奖评优资格 + <b>追回已发称号与奖助学金</b>。</li>
+        <li><span class="star1">★</span> 办事：学生事务中心（行政楼2-13，6089979）｜教务处（3楼，6089096）｜资助中心（2-7，6089081）｜心理中心（6089525）｜公寓中心（2419067）。</li>
+      </ul>
+      <div class="warn">🔴 医院等级别混：休学保留资格用<b>二级甲等</b>以上；校外住宿用<b>三级甲等</b>。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📝 本板块常见题型与答题要点</summary>
+    <div class="body">
+      <ul>
+        <li><b>填空/判断：</b>授位绩点 2.0/1.6、请销假 3/3-7/7-14 天、水电 3 吨/5 度/8 度、借阅 30 册 60 天、补卡 20 元、校外住宿≤1 年。</li>
+        <li><b>情景题：</b>请假 5 天谁批？期满不销假如何认定？擅自外宿如何处理？</li>
+        <li><b>简答：</b>不授予学位 5 情形；校外住宿三类条件；社团成立条件与经费红线。</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 板块四 ================= -->
+<section id="s4">
+  <h2 class="sec"><span class="no">④</span>资助与育人</h2>
+  <p class="sec-sub">政策体系 + 认定 + 三大奖助学金 + 贷款 + 勤工 + 医疗。金额与"兼得规则"是命题核心。</p>
+
+  <details open>
+    <summary>1. 资助政策体系 · 绿色通道 · 困难认定<span class="tag">对象是前提</span></summary>
+    <div class="body">
+      <ul>
+        <li><span class="star3">★★★</span> 多元混合资助体系："<b>奖、贷、助、勤、免、补、医</b>"；资助中心电话 0816-6089081。</li>
+        <li><span class="star3">★★★</span> 滋蕙计划（新生）：特别困难大一新生，省内 <span class="num">500</span> 元、省外 <span class="num">1000</span> 元，报到前申请。</li>
+        <li><span class="star3">★★★</span> 绿色通道：暂时筹不齐学费住宿费，<b>先办入学、后认定资助</b>。</li>
+        <li><span class="star3">★★★</span> 认定档次三档：<b>特别困难、困难、一般困难</b>；收入线：特困"不足低保 80%"、困难"接近低保"、一般"低于低保 150%"。</li>
+        <li><span class="star3">★★★</span> 四级机制：校学工委 → 校资助机构 → 院工作组 → 年级/班级评议小组；评议小组<b>学生代表单数、一般 7—13 人、非参评、每班≥10%</b>。</li>
+        <li><span class="star3">★★★</span> 程序七步：告知→申请→评议→院审→校复核→审批→建档；到会 ≥<span class="num">80%</span>。</li>
+        <li><span class="star3">★★★</span> 公示：院 <span class="num">3 工作日</span>、校 <span class="num">2 工作日</span>；异议 3 日、复议 3 日；每学年认定、每学期调整、每学年复查。</li>
+        <li><span class="star3">★★★</span> 三不认定：材料<b>弄虚作假</b>、<b>校外租房</b>（特殊经同意除外）、<b>高消费</b>；申请理由 ≥<span class="num">200 字</span>，公示不含隐私信息。</li>
+      </ul>
+      <div class="tip">口诀："奖贷助勤免补医；特困八折、一般一倍五；院三校二、到会八成"。</div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>2. 国家奖学金 / 国家励志 / 国家助学金（三大对比）<span class="tag">必考</span></summary>
+    <div class="body">
+      <table>
+        <tr><th>项目</th><th>金额</th><th>对象与成绩条件</th><th>原则 / 兼得</th></tr>
+        <tr><td><b>国家奖学金</b></td><td><span class="num">10000 元</span>/年</td><td>二年级及以上特别优秀；双排名前 <span class="num">10%</span>（含）且无不及格，前 30% 须某方面突出</td><td><b>优中选优</b>；可兼国家助学金，<b>不可</b>兼励志</td></tr>
+        <tr><td><b>国家励志奖学金</b></td><td><span class="num">6000 元</span>/年</td><td>二年级及以上、品学兼优且家庭经济困难；双排名前 10%（30% 须 ≥1 次校级及以上表彰）</td><td><b>困中选优</b>；可兼国家助学金，<b>不可</b>兼国奖</td></tr>
+        <tr><td><b>国家助学金</b></td><td><span class="num">2500/3700/4900</span>，均 3700</td><td>家庭经济困难学生（含新生）、退役士兵；须被认定困难且生活俭朴，无排名硬指标</td><td><b>困中选困</b>；可兼国奖/励志，<b>不可</b>兼校内助学金</td></tr>
+      </table>
+      <ul>
+        <li><span class="star3">★★★</span> 三者均每学年评审一次；奖金 <span class="num">12 月 31 日</span>前一次性发放、经"一卡通"到社保卡；学校公示 ≥<span class="num">5 工作日</span>。</li>
+        <li><span class="star3">★★★</span> 助学金发放：秋季按学期（<span class="num">5 个月</span>）、不晚于 <span class="num">11 月 30 日</span>；春季按月。</li>
+        <li><span class="star2">★★</span> 国奖名额全覆盖、倾斜农林水地矿油核；励志为<b>电子证书</b>；退役士兵全部享受助学金、不占名额。</li>
+      </ul>
+      <div class="tip">口诀："奖优1万看成绩、励困6千要困难、助困3700分三档"。</div>
+      <div class="warn">🔴 <b>校内助学金硬条件：</b>同一学年<b>未获得国家助学金</b>；原则 1000 元（政策简介列 1400 元）。评审原则也是"困中选困"。</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. 助学贷款 · 勤工助学 · 医疗补助 · 专项<span class="tag">金额密集</span></summary>
+    <div class="body">
+      <h4>国家助学贷款（2025修订）</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 额度本专科 ≤<span class="num">20000</span> 元/年、研究生 ≤<span class="num">25000</span> 元/年；利率 <span class="num">LPR−0.7%</span>。</li>
+        <li><span class="star3">★★★</span> 期限学制 +<span class="num">15 年</span>、最长 <span class="num">22 年</span>；<b>在校利息财政全贴</b>；毕业后最长 <span class="num">5 年</span>还本宽限期（只还息）。</li>
+        <li><span class="star3">★★★</span> 分生源地与校园地两类，<b>同一学年二选一</b>、建议优先生源地；入学后 <span class="num">7 工作日</span>内填"数智学工"。</li>
+      </ul>
+      <h4>勤工助学</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 周 ≤<span class="num">8 小时</span>、月 ≤<span class="num">40 小时</span>（寒暑假除外）；校内报酬 ≥<span class="num">12 元/小时</span>。</li>
+        <li><span class="star3">★★★</span> 岗位比例：管理型 ≥40%、技术型 ≥30%、公共服务型 ≤30%、临时 ≤10%；考核优良中差，优秀全额、差可辞退。</li>
+        <li><span class="star2">★★</span> 未满 16 周岁禁止、未满 18 周岁须监护人同意。</li>
+      </ul>
+      <h4>医疗补助（2025修订）</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 预算每生每年 <span class="num">30 元</span>；须购买当年城乡居民医保；只补"医保范围内未报销部分"的 <span class="num">50%</span>。</li>
+        <li><span class="star3">★★★</span> 门诊限额：教学实践意外 <span class="num">2000</span> 元、慢性病 500 元（两种以上 800 元）；<b>每生每周期封顶 6 万元</b>。</li>
+        <li><span class="star2">★★</span> 票据有效期：住院出院后半年、门诊就诊后 3 个月。</li>
+      </ul>
+      <h4>其他专项</h4>
+      <ul>
+        <li><span class="star3">★★★</span> 服兵役资助本专科 ≤<span class="num">2 万</span>；基层就业连续服务满 <span class="num">3 年</span>、奖补 ≤<span class="num">6000/年</span>；筑梦奖学金 4000；临时困难补助最高 2000/次、一学年 ≤2 次。</li>
+        <li><span class="star3">★★★</span> 创新基金：负责人<b>须困难生</b>；成员 3—5 人、困难生 ≥50%；自然科学 ≤<span class="num">3000</span>、人文社科 ≤2000；经费立项30%+中期30%+结题40%。</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>📝 本板块常见题型与答题要点</summary>
+    <div class="body">
+      <ul>
+        <li><b>对比题：</b>三大奖助学金金额/对象/成绩/原则/兼得；困难认定三档收入线；三类项目"优中选优/困中选优/困中选困"。</li>
+        <li><b>数字题：</b>贷款 2 万/2.5 万、LPR−0.7%、学制+15最长22；助学金三档；勤工 12 元 8/40 小时；医疗 50% 封顶 6 万。</li>
+        <li><b>简答：</b>困难认定七步与三不；绿色通道含义；国家助学贷款两类区别。</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 跨文件对比 ================= -->
+<section id="cmp">
+  <h2 class="sec">🆚 跨文件对比与易混淆总表（重中之重）</h2>
+  <div class="warn">
+    ⚠️ <b>金额新旧冲突：</b>《学生资助资金管理办法》保留<b>旧口径</b>——国奖 8000、励志 5000、助学金 2100/3300/4500（均 3300）、贷款本专科 16000（LPR−0.6%）、服兵役 16000、校内助学金 1000、创新基金理工 5000；<br>
+    而 2026 版简介与各 2026 修订评审办法为<b>新口径</b>——国奖 10000、励志 6000、助学金 2500/3700/4900（均 3700）、贷款本专科 20000（LPR−0.7%）、服兵役 20000、校内助学金 1400、创新基金 3000。<br>
+    <b>原文多处写明"如遇调整，以最新政策文件为准"→ 考试答"现行标准"用新口径；若题干明确问"资金管理办法原文"则答旧口径。</b>
+  </div>
+  <table>
+    <tr><th>易混点</th><th>记住</th></tr>
+    <tr><td>权利/义务项数</td><td>权利 <span class="num">7</span> 项、义务 <span class="num">6</span> 项</td></tr>
+    <tr><td>处分期限</td><td>教育部令"6 到 12 个月"区间；校规 <span class="num">6/9/12 个月</span>分档</td></tr>
+    <tr><td>重大处分机关</td><td>教育部令：校长办公会或专门会议 + 合法性审查；校规：仅校长办公会</td></tr>
+    <tr><td>省级申诉受理</td><td>教育部令：省级教育行政部门（有 30 工作日）；校规：四川省教育厅（无 30 日）</td></tr>
+    <tr><td>公示期</td><td>综测 3 工作日；奖励/奖助学金 5 工作日；困难认定院 3 校 2</td></tr>
+    <tr><td>30 学分</td><td>肄业＝已获&gt;30；结业＝距毕业差≤30</td></tr>
+    <tr><td>绩点</td><td>授位 2.0、辅修 1.6、提前毕业 3.8</td></tr>
+    <tr><td>医院等级</td><td>保留入学资格（休学）二级甲等；校外住宿 三级甲等</td></tr>
+    <tr><td>保留学籍是否计年限</td><td>参军<b>不计</b>；国际组织实习、跨校联培<b>计入</b></td></tr>
+    <tr><td>考试违规</td><td>口头警告纠正（无处分无零分）≠ 警告处分（零分）</td></tr>
+    <tr><td>图书馆超期</td><td>10 日内免收；11 日起 0.1 元/天</td></tr>
+    <tr><td>校内助学金硬条件</td><td>同学年未获国家助学金</td></tr>
+  </table>
+</section>
+
+<footer>
+  本清单全部内容依据《西南科技大学学生手册（2026年版）》四大板块整理，未引入手册之外的规定。<br>
+  ★★☆ 分级与口诀仅为助记，作答请以手册原文表述为准；金额遇新旧口径冲突，按文件标注处理。<br>
+  建议：先背"黄金数字速记"，再按板块过重点，最后用"易混淆总表"自查。
+</footer>
+</div>
+
+<button id="topBtn" title="返回顶部">↑</button>
+
+<script>
+  var q = document.getElementById('q');
+  // 给所有列表项与表格行打标记，便于搜索
+  document.querySelectorAll('li, tr').forEach(function(e){ e.classList.add('hit'); });
+  q.addEventListener('input', function(){
+    var v = q.value.trim();
+    if(v){ document.querySelectorAll('details').forEach(function(d){ d.open = true; }); }
+    document.querySelectorAll('.hit').forEach(function(e){
+      e.classList.toggle('dimmed', !!v && e.textContent.indexOf(v) < 0);
+    });
+  });
+  var allOpen = false;
+  document.getElementById('expandBtn').addEventListener('click', function(){
+    allOpen = !allOpen;
+    document.querySelectorAll('details').forEach(function(d){ d.open = allOpen; });
+    this.textContent = allOpen ? '收起全部' : '展开全部';
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+  var topBtn = document.getElementById('topBtn');
+  window.addEventListener('scroll', function(){
+    topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('details').forEach(function(d){ d.open = true; });
+  });
+</script>
+</body>
+</html>
